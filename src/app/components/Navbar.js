@@ -22,7 +22,7 @@ export default function Navbar() {
 
       {/* Hamburger Menu Button - Visible on Small Screens */}
       <button
-        className="md:hidden text-gray-800"
+        className="md:hidden text-gray-200"
         onClick={() => setMenuOpen(!menuOpen)}
       >
         {menuOpen ? <X size={28} /> : <Menu size={28} />} {/* Toggle icon */}

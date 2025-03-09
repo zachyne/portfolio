@@ -112,81 +112,85 @@ const TechItem = ({ name, logo }) => (
 
 export default function About() {
     return (
-        <div className="flex flex-col justify-start min-h-screen sm:p-20 font-[family-name:var(--font-geist-sans)]">
-            <Intro line1="who is" line2="ZACHYNE" line3="?" />
-
-            {/* 3 Pictures  */}
-            <div className='grid grid-cols-3 gap-4 text-center mt-8'>
-                {profileImages.map((src, index) => <ProfileImage key={index} src={src} />)}
-            </div>
-    
-
-            {/* About Me  */}
-            <div className="flex p-2 mt-8">
-                <div className="w-2/6 p-4">
-                    {/* <!-- Content for the 1/2 section --> */}
-                    <h2 className="text-xl font-bold">About Me</h2>
-                </div>
-                <div className="w-4/6 p-4">
-                    {/* <!-- Content for the 3/4 section --> */}
-                    <p className="mb-5">Hi! I am Cyrine and I go by the name of “Zachyne”, why? because it is cool. I am from the Philippines and I am currently a senior computer science student.</p>
-                    <p className="mb-5">I am passionate in Web Development and Data Engineering.</p>
-                    <p className="mb-5">I created this portfolio website so I can practice my coding skills. This website’s design might seem feel familiar because this is inspired by Brian Ruiz’s portfolio page. I am a fan of him.</p>
-                </div>
-            </div>
-
-            {/* Experience */}
-            <div className="flex p-2 mt-8">
-                <div className="w-2/6 p-4">
-                    {/* <!-- Content for the 1/2 section --> */}
-                    <h2 className="text-xl font-bold">Experience</h2>
-                </div>
-                <div className="w-4/6 p-4">
-                    {/* <!-- Content for the 3/4 section --> */}
-                    <Section title='Experience'>
-                        {experiences.map((exp, index) => <ExperienceItem key={index} {...exp} />)}
-                    </Section>
-                </div>
-            </div>
-
-            {/* Education */}
-            <div className="flex p-2 mt-8">
-                <div className="w-2/6 p-4">
-                    {/* <!-- Content for the 1/2 section --> */}
-                    <h2 className="text-xl font-bold">Education</h2>
-                </div>
-                <div className="w-4/6 p-4 flex flex-col gap-10">
-                    {/* <!-- Content for the 3/4 section --> */}
-                    <Section title='Education'>
-                        {education.map((edu, index) => <EducationItem key={index} {...edu} />)}
-                    </Section>
-                </div>
-            </div>
-
-            {/* Technologies Used */}
-            <div className="flex p-2 mt-8">
-                <div className="w-2/6 p-4">
-                    <h2 className="text-xl font-bold">Technologies Used</h2>
-                </div>
-                <div className="w-4/6 p-4">
-                    {Object.entries(groupedTechnologies).map(([category, techs]) => (
-                        <div key={category} className="flex flex-col mb-10">
-                            <div className="font-semibold text-xl mb-5">{category}</div>
-                            <div className="flex flex-wrap gap-x-8 gap-y-8">
-                                {techs.map((tech, index) => (
-                                    <TechItem key={index} {...tech} />
-                                ))}
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+      <div className="flex flex-col justify-start min-h-screen px-5 py-10 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+        <Intro line1="who is" line2="ZACHYNE" line3="?" />
+  
+        {/* 3 Pictures */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center mt-8">
+          {profileImages.map((src, index) => (
+            <ProfileImage key={index} src={src} />
+          ))}
         </div>
-    )
-}
-
-const Section = ({ children }) => (
+  
+        {/* About Me */}
+        <div className="flex flex-col sm:flex-row p-2 mt-8">
+          <div className="sm:w-2/6 p-4">
+            <h2 className="text-xl font-bold">About Me</h2>
+          </div>
+          <div className="sm:w-4/6 p-4">
+            <p className="mb-5">
+              Hi! I am Cyrine and I go by the name of “Zachyne”, why? because it is cool. I am from the Philippines and I am currently a senior computer science student.
+            </p>
+            <p className="mb-5">I am passionate in Web Development and Data Engineering.</p>
+            <p className="mb-5">
+              I created this portfolio website so I can practice my coding skills. This website’s design might seem familiar because this is inspired by Brian Ruiz’s portfolio page. I am a fan of him.
+            </p>
+          </div>
+        </div>
+  
+        {/* Experience */}
+        <div className="flex flex-col sm:flex-row p-2 mt-8">
+          <div className="sm:w-2/6 p-4">
+            <h2 className="text-xl font-bold">Experience</h2>
+          </div>
+          <div className="sm:w-4/6 p-4">
+            <Section title="Experience">
+              {experiences.map((exp, index) => (
+                <ExperienceItem key={index} {...exp} />
+              ))}
+            </Section>
+          </div>
+        </div>
+  
+        {/* Education */}
+        <div className="flex flex-col sm:flex-row p-2 mt-8">
+          <div className="sm:w-2/6 p-4">
+            <h2 className="text-xl font-bold">Education</h2>
+          </div>
+          <div className="sm:w-4/6 p-4 flex flex-col gap-10">
+            <Section title="Education">
+              {education.map((edu, index) => (
+                <EducationItem key={index} {...edu} />
+              ))}
+            </Section>
+          </div>
+        </div>
+  
+        {/* Technologies Used */}
+        <div className="flex flex-col sm:flex-row p-2 mt-8">
+          <div className="sm:w-2/6 p-4">
+            <h2 className="text-xl font-bold">Technologies Used</h2>
+          </div>
+          <div className="sm:w-4/6 p-4">
+            {Object.entries(groupedTechnologies).map(([category, techs]) => (
+              <div key={category} className="flex flex-col mb-10">
+                <div className="font-semibold text-xl mb-5">{category}</div>
+                <div className="flex flex-wrap gap-x-8 gap-y-8">
+                  {techs.map((tech, index) => (
+                    <TechItem key={index} {...tech} className="w-12 sm:w-16" />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+  
+  const Section = ({ children }) => (
     <div>
-        <div className="flex flex-col gap-5">{children}</div>
+      <div className="flex flex-col gap-5">{children}</div>
     </div>
-);
+  );
+  
