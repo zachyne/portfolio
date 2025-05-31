@@ -7,12 +7,17 @@ const experiences = [
     {
         logo: "/img/about/landchecker.png",
         company: "Landchecker",
+        role: "Date Engineer",
+        duration: "May 2025 - Present",
+    },
+    {
+        logo: "/img/about/landchecker.png",
+        company: "Landchecker",
         role: "Intern",
         team: "Data Engineering Team",
         duration: "January 2025 - April 2025",
-    },
+    }
 ];
-
 const education = [
     {
         logo: "/img/about/bipsu.jpg",
