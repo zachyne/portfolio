@@ -57,10 +57,11 @@ const technologies = [
     { name: "React", logo: "/img/about/react.png", category: "Web Development" },
     { name: "Next.js", logo: "/img/about/next.png", category: "Web Development" },
     { name: "PostgreSQL", logo: "/img/about/psql.png", category: "Web Development" },
-    { name: "QGIS", logo: "/img/about/qgis.png", category: "Data & QGIS" },
-    { name: "ETL", logo: "/img/about/etl.png", category: "Data & QGIS"  },
-    { name: "Selenium", logo: "/img/about/selenium.png", category: "Selenium & Bash Scripting"  },
-    { name: "Bash Scripting", logo: "/img/about/bash-script.png", category: "Selenium & Bash Scripting" },
+    { name: "Databricks", logo: "/img/about/dbz.png", category: "Data & GIS" },
+    { name: "QGIS", logo: "/img/about/qgis.png", category: "Data & GIS" },
+    { name: "ETL", logo: "/img/about/etl.png", category: "Data & GIS"  },
+    { name: "Selenium", logo: "/img/about/selenium.png", category: "Automation"  },
+    { name: "Bash Scripting", logo: "/img/about/bash-script.png", category: "Automation" },
     { name: "Flutter", logo: "/img/about/flutter.png", category: "Mobile App Development" },
 ];
 
