@@ -1,23 +1,21 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Papa from "papaparse";
 import Intro from "../components/Intro";
 import KdramaModal from "../components/KdramaModal"; // Import the modal component
+import { fetchKdramas, urlFor } from '../../lib/sanity'; // Import the fetch function
 
 export default function Kdramas() {
   const [kdramas, setKdramas] = useState([]);
   const [selectedKdrama, setSelectedKdrama] = useState(null); // Track clicked kdrama
 
   useEffect(() => {
-    const fetchCSV = async () => {
-      const response = await fetch("/data/kdramas.csv");
-      const text = await response.text();
-      const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
-      setKdramas(parsed.data);
+    const getKdramas = async () => {
+      const data = await fetchKdramas();
+      setKdramas(data);
     };
 
-    fetchCSV();
+    getKdramas();
   }, []);
 
   return (
@@ -32,7 +30,7 @@ export default function Kdramas() {
             onClick={() => setSelectedKdrama(kdrama)} // Open modal when clicked
           >
             <Image
-              src={`/img/kdramas/${kdrama.poster_image}`}
+              src={urlFor(kdrama.poster_image).url()} // Use the urlFor function to get the image URL
               width={192}
               height={269}
               className="rounded-lg max-w-[192px]"
